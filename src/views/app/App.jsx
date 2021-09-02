@@ -1,13 +1,23 @@
 import React from 'react'
+import _ from 'lodash/fp'
+import {
+    Navbar,
+    NavbarBrand,
+} from 'reactstrap'
+
 import LoremIpsum from '../../data/LoremIpsum'
 
-import _ from 'lodash/fp'
+
 
 const App = () => {
-    const lorem = _.times(() => <p><LoremIpsum /></p>)
+    const lorem = _.times((i) => <p key={i}><LoremIpsum /></p>)
 
     return (
         <div>
+            <Navbar color="light" light expand="md">
+                <NavbarBrand href="/">View</NavbarBrand>
+            </Navbar>
+
             {lorem(50)}
         </div>
     )
