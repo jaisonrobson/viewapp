@@ -1,11 +1,8 @@
 import React from 'react'
 import _ from 'lodash/fp'
-import {
-    Navbar,
-    NavbarBrand,
-} from 'reactstrap'
 
 import LoremIpsum from '../../data/LoremIpsum'
+import MainNavbar from '../../components/MainNavbar/MainNavbar'
 
 
 
@@ -14,9 +11,7 @@ const App = () => {
 
     return (
         <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">View</NavbarBrand>
-            </Navbar>
+            <MainNavbar />
 
             {lorem(50)}
         </div>
