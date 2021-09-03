@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash/fp'
 
 import LoremIpsum from '../../data/LoremIpsum'
-import MainNavbar from '../../components/MainNavbar/MainNavbar'
+import Navbar from '../../components/layout/Navbar'
 
 
 
@@ -11,7 +11,7 @@ const App = () => {
 
     return (
         <div>
-            <MainNavbar />
+            <Navbar />
 
             {lorem(50)}
         </div>
