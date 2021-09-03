@@ -9,7 +9,6 @@ import {
     DropdownToggle,
     Nav,
     Navbar as ReactstrapNavbar,
-    NavbarBrand,
     NavbarToggler,
     NavItem,
     UncontrolledDropdown,
@@ -17,6 +16,7 @@ import {
 } from 'reactstrap'
 
 import NavLink from './NavLink'
+import NavbarBrand from './NavbarBrand'
 
 
 const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar {...props} />)`
@@ -53,19 +53,7 @@ const Navbar = () => {
             expand="sm"
             backgroundColor={isShow && "#111"}
         >
-            <NavbarBrand
-                href="/"
-                style={{
-                    color: '#FFF',
-                    fontFamily: "'Monoton', cursive",
-                    fontWeight: '1',
-                    fontSize: '25px',
-                    letterSpacing: '3px',
-                    textShadow: '2px 2px 5px #000',
-                }}
-            >
-                View
-            </NavbarBrand>
+            <NavbarBrand>View</NavbarBrand>
 
             <NavbarToggler
                 onClick={toogle}
