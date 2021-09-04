@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import {
-    Collapse,
+    Container,
     DropdownItem,
     DropdownMenu,
     DropdownToggle,
     Nav,
     Navbar as ReactstrapNavbar,
-    NavbarToggler,
     NavItem,
     UncontrolledDropdown,
-    Container,
 } from 'reactstrap'
 
-import NavLink from './NavLink'
 import NavbarBrand from './NavbarBrand'
+import NavbarCollapsible from './NavbarCollapsible'
+import NavLink from './NavLink'
+
 
 
 const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar {...props} />)`
@@ -30,9 +30,7 @@ const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar
 
 const Navbar = () => {
     const [isShow, setIsShow] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
 
-    const toogle = () => setIsOpen(!isOpen)
 
     useEffect(() => {
         const scroll = () => {
@@ -55,32 +53,27 @@ const Navbar = () => {
         >
             <NavbarBrand>View</NavbarBrand>
 
-            <NavbarToggler
-                onClick={toogle}
-                style={{
-                    color: `${isShow ? '#FFFFFFA1' : '#111'}`,
-                }}
-            >
-                <FontAwesomeIcon icon={faBars} />
-            </NavbarToggler>
+            <NavbarCollapsible>
+                <NavbarCollapsible.Toggler color={isShow ? '#FFFFFFA1' : '#111'} />
 
-            <Collapse isOpen={isOpen} navbar>
-                <Container>
-                    <Nav navbar className="justify-content-center">
-                        <NavItem>
-                            <NavLink>
-                                Movies
-                            </NavLink>
-                        </NavItem>
+                <NavbarCollapsible.Collapse navbar>
+                    <Container>
+                        <Nav navbar className="justify-content-center">
+                            <NavItem>
+                                <NavLink>
+                                    Movies
+                                </NavLink>
+                            </NavItem>
 
-                        <NavItem>
-                            <NavLink>
-                                Series
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
-                </Container>
-            </Collapse>
+                            <NavItem>
+                                <NavLink>
+                                    Series
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Container>
+                </NavbarCollapsible.Collapse>
+            </NavbarCollapsible>
 
             <UncontrolledDropdown inNavbar>
                 <DropdownToggle
