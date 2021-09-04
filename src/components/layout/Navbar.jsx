@@ -4,20 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import {
     Container,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
     Nav,
     Navbar as ReactstrapNavbar,
     NavItem,
-    UncontrolledDropdown,
 } from 'reactstrap'
 
 import NavbarBrand from './NavbarBrand'
 import NavbarCollapsible from './NavbarCollapsible'
 import NavLink from './NavLink'
-
-
+import Dropdown from './Dropdown'
 
 const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar {...props} />)`
     transition-timing-function: ease-in;
@@ -75,13 +70,12 @@ const Navbar = () => {
                 </NavbarCollapsible.Collapse>
             </NavbarCollapsible>
 
-            <UncontrolledDropdown inNavbar>
-                <DropdownToggle
+            <Dropdown>
+                <Dropdown.Toggler
                     nav
-                    style={{
-                        color: '#FFFFFFA1',
-                        textShadow: "1px 1px 3px #000",
-                    }}
+                    color="#FFFFFFA1"
+                    hoverColor="#FFF"
+                    textShadow="1px 1px 3px #000"
                 >
                     <img
                         src={process.env.PUBLIC_URL + '/images/userNoAvatar.png'}
@@ -108,21 +102,24 @@ const Navbar = () => {
                             paddingTop: '1px',
                         }}
                     />
-                </DropdownToggle>
+                </Dropdown.Toggler>
 
-                <DropdownMenu right>
-                    <DropdownItem>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
                         Option 1
-                    </DropdownItem>
-                    <DropdownItem>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item>
                         Option 2
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                        Reset
-                    </DropdownItem>
-                </DropdownMenu>
-            </UncontrolledDropdown>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item divider />
+
+                    <Dropdown.Item>
+                        Option 3
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
         </StyledNavbar>
     )
 }
