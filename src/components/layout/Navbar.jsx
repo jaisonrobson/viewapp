@@ -11,7 +11,7 @@ const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar
     background-color: ${({ backgroundColor }) => backgroundColor || "#00000020"};
 `
 
-const Navbar = (props) => {
+const Navbar = ({ children, ...props }) => {
     const [isShow, setIsShow] = useState(false)
 
     useEffect(() => {
@@ -32,7 +32,9 @@ const Navbar = (props) => {
             expand="sm"
             backgroundColor={isShow && "#111"}
             {...props}
-        />
+        >
+            {children({ isShow })}
+        </StyledNavbar>
     )
 }
 
