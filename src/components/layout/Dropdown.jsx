@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap'
+
 import { FlagContext, withFlagContext } from '../../contexts/withFlagContext'
 
 const StyledDropdownToggle = styled(({ color, textShadow, hoverColor, ...props }) => <DropdownToggle {...props} />)`
