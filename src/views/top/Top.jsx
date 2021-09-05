@@ -13,6 +13,7 @@ import NavLink from '../../components/layout/NavLink'
 import Dropdown from '../../components/layout/Dropdown'
 import Icon from '../../components/layout/Icon'
 import Span from '../../components/layout/Span'
+import Image from '../../components/layout/Image'
 
 const Top = () => (
     <Navbar>
@@ -49,14 +50,11 @@ const Top = () => (
                         hoverColor="#FFF"
                         textShadow="1px 1px 3px #000"
                     >
-                        <img
+                        <Image
                             src={process.env.PUBLIC_URL + '/images/userNoAvatar.png'}
-                            alt=""
                             className="rounded-circle"
-                            style={{
-                                objectFit: 'contain',
-                                width: '35px',
-                            }}
+                            objectFit="contain"
+                            width="35px"
                         />
 
                         <Span marginLeft="10px" marginRight="5px">User</Span>
