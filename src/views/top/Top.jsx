@@ -12,6 +12,7 @@ import NavbarCollapsible from '../../components/layout/NavbarCollapsible'
 import NavLink from '../../components/layout/NavLink'
 import Dropdown from '../../components/layout/Dropdown'
 import Icon from '../../components/layout/Icon'
+import Span from '../../components/layout/Span'
 
 const Top = () => (
     <Navbar>
@@ -58,14 +59,7 @@ const Top = () => (
                             }}
                         />
 
-                        <span
-                            style={{
-                                marginLeft: '10px',
-                                marginRight: '5px',
-                            }}
-                        >
-                            User
-                        </span>
+                        <Span marginLeft="10px" marginRight="5px">User</Span>
 
                         <Icon paddingTop="1px" icon={faCaretDown} />
                     </Dropdown.Toggler>
