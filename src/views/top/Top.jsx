@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import {
     Container,
@@ -12,6 +11,7 @@ import NavbarBrand from '../../components/layout/NavbarBrand'
 import NavbarCollapsible from '../../components/layout/NavbarCollapsible'
 import NavLink from '../../components/layout/NavLink'
 import Dropdown from '../../components/layout/Dropdown'
+import Icon from '../../components/layout/Icon'
 
 const Top = () => (
     <Navbar>
@@ -67,12 +67,7 @@ const Top = () => (
                             User
                         </span>
 
-                        <FontAwesomeIcon
-                            icon={faCaretDown}
-                            style={{
-                                paddingTop: '1px',
-                            }}
-                        />
+                        <Icon paddingTop="1px" icon={faCaretDown} />
                     </Dropdown.Toggler>
 
                     <Dropdown.Menu>
