@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/bootstrap.min.css'
 
 import ReactDOM from "react-dom";
 import App from './views/app/App'
