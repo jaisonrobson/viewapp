@@ -2,6 +2,7 @@ import reactDom from 'react-dom'
 import React, { useContext, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap'
+import { isDesktop } from 'react-device-detect'
 
 import { FlagContext, withFlagContext } from '../../contexts/withFlagContext'
 
@@ -28,6 +29,8 @@ const Dropdown = (props) => {
     const toggle = () => setIsOpen(!isOpen)
 
     useEffect(() => {
+        if (!isDesktop) return false
+
         const over = () => setIsOpen(true)
         const leave = () => setIsOpen(false)
 
