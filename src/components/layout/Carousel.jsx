@@ -53,7 +53,7 @@ const Carousel = (props) => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
-                <img src={item.src} alt={item.altText} style={{ objectFit: 'contain', width: '100vw' }} />
+                <img src={item.src} alt={item.altText} style={{ objectFit: 'cover', width: '100vw', height: '500px' }} />
                 <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
         );
