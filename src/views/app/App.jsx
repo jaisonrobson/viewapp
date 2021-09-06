@@ -1,21 +1,18 @@
+import './App.css'
+
 import React from 'react'
-import _ from 'lodash/fp'
 
-import LoremIpsum from '../../data/LoremIpsum'
 import Top from '../top/Top'
+import Content from '../content/Content'
 
 
 
-const App = () => {
-    const lorem = _.times((i) => <p key={i}><LoremIpsum /></p>)
+const App = () => (
+    <div className="app">
+        <Top />
 
-    return (
-        <div>
-            <Top />
-
-            {lorem(50)}
-        </div>
-    )
-}
+        <Content />
+    </div>
+)
 
 export default App
