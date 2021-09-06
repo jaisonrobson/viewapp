@@ -9,17 +9,17 @@ import {
 
 const items = [
     {
-        src: '',
+        src: process.env.PUBLIC_URL + '/images/gatopordosol.jpg',
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: '',
+        src: process.env.PUBLIC_URL + '/images/surfando.jpg',
         altText: 'Slide 2',
         caption: 'Slide 2'
     },
     {
-        src: '',
+        src: process.env.PUBLIC_URL + '/images/castelo.jpg',
         altText: 'Slide 3',
         caption: 'Slide 3'
     }
@@ -53,7 +53,7 @@ const Carousel = (props) => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
-                <img src={item.src} alt={item.altText} />
+                <img src={item.src} alt={item.altText} style={{ objectFit: 'contain', width: '100vw' }} />
                 <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
         );

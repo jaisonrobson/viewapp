@@ -5,9 +5,9 @@ import Carousel from '../../components/layout/Carousel'
 
 const Content = () => {
     return (
-        <Container>
+        <Container fluid>
             <Row>
-                <Col>
+                <Col style={{ padding: '0px' }}>
                     <Carousel />
                 </Col>
             </Row>
