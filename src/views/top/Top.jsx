@@ -6,6 +6,8 @@ import {
     NavItem,
 } from 'reactstrap'
 
+import userNoAvatarImage from 'images/userNoAvatar.png'
+
 import Navbar from '../../components/layout/Navbar'
 import NavbarBrand from '../../components/layout/NavbarBrand'
 import NavbarCollapsible from '../../components/layout/NavbarCollapsible'
@@ -51,7 +53,7 @@ const Top = () => (
                         textShadow="1px 1px 3px #000"
                     >
                         <Image
-                            src={process.env.PUBLIC_URL + '/images/userNoAvatar.png'}
+                            src={userNoAvatarImage}
                             className="rounded-circle"
                             objectFit="contain"
                             width="35px"
