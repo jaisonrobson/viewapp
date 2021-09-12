@@ -7,6 +7,10 @@ import castelo from 'images/castelo.jpg'
 import gatopordosol from 'images/gatopordosol.jpg'
 import surfando from 'images/surfando.jpg'
 
+const carouselDefaultProps = {
+    width: '100vw',
+    height: '85vh',
+}
 
 const payload = [
     {
@@ -49,7 +53,7 @@ const StyledIndicators = styled.div`
     justify-content: center;
     padding: 0;
     margin-right: 15%;
-    margin-bottom: 1rem;
+    margin-bottom: 5vh;
     margin-left: 15%;
     list-style: none;
 `
@@ -74,13 +78,23 @@ const StyledIndicator = styled(({ opacity, cursor, ...props }) => <button {...pr
     border-radius: 50%;
 `
 
-const StyledCaption = styled.div`
+const StyledInfoArea = styled.div`
     position: absolute;
-    margin-left: 20vw;
-    margin-top: 20vh;
+    width: ${carouselDefaultProps.width};
+    height: ${carouselDefaultProps.height};
+    padding: 2rem;
+    z-index: 3;
+`
+
+const StyledCaption = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: #fff;
     text-align: center;
-    z-index: 3;
 `
 
 const StyledInner = styled.div`
@@ -90,8 +104,8 @@ const StyledInner = styled.div`
 
 const StyledCarousel = styled.div`
     position: relative;
-    width: 100vw;
-    height: 50vh;
+    width: ${carouselDefaultProps.width};
+    height: ${carouselDefaultProps.height};
 `
 
 const StyledGradient = styled(({ backgroundColor, backgroundTo, ...props }) => <div {...props} />)`
@@ -111,7 +125,7 @@ const StyledOverlay = styled.div`
     height: 100%;
     background: linear-gradient(to bottom,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 25%);
 `
-
+//Este componente sera refatorado em outro momento.
 const Carousel = ({ interval = 6000, ...props }) => {
     const ref = useRef(null)
     const [active, setActive] = useState(0)
@@ -154,11 +168,15 @@ const Carousel = ({ interval = 6000, ...props }) => {
                 ))}
             </StyledIndicators>
 
-            <StyledCaption>
-                <h1 style={{ color: '#fff' }}>
-                    {items[active].caption}
-                </h1>
-            </StyledCaption>
+            <StyledInfoArea>
+                <StyledCaption>
+                    <div>
+                        <h1 style={{ color: '#fff' }}>
+                            {items[active].caption}
+                        </h1>
+                    </div>
+                </StyledCaption>
+            </StyledInfoArea>
 
             <StyledInner>
                 {items.map((element, index) => (
