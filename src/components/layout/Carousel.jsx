@@ -93,8 +93,8 @@ const StyledCaption = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #fff;
-    text-align: center;
+    text-align: left;
+    color: #FFFFFF;
 `
 
 const StyledInner = styled.div`
@@ -123,7 +123,7 @@ const StyledOverlay = styled.div`
     top: 0;
     left: 0;
     height: 100%;
-    background: linear-gradient(to bottom,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 25%);
+    background: linear-gradient(to bottom,rgba(0,0,0,.7) 0%,rgba(0,0,0,.5) 25%);
 `
 //Este componente sera refatorado em outro momento.
 const Carousel = ({ interval = 6000, ...props }) => {
@@ -174,6 +174,18 @@ const Carousel = ({ interval = 6000, ...props }) => {
                         <h1 style={{ color: '#fff' }}>
                             {items[active].caption}
                         </h1>
+                        <p
+                            style={{
+                                fontFamily: "'Roboto',sans-serif",
+                                fontSize: '12px',
+                                lineHeight: '1.5em',
+                                color: '#FFFFFFA8',
+                                textShadow: '1px 1px 2px #57575770',
+                            }}
+                        >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                        <button>Watch</button>
                     </div>
                 </StyledCaption>
             </StyledInfoArea>
