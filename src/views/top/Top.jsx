@@ -8,14 +8,14 @@ import {
 
 import userNoAvatarImage from 'images/userNoAvatar.png'
 
-import Navbar from '../../components/layout/Navbar'
-import NavbarBrand from '../../components/layout/NavbarBrand'
-import NavbarCollapsible from '../../components/layout/NavbarCollapsible'
-import NavLink from '../../components/layout/NavLink'
-import Dropdown from '../../components/layout/Dropdown'
-import Icon from '../../components/layout/Icon'
-import Span from '../../components/layout/Span'
-import Image from '../../components/layout/Image'
+import Navbar from 'components/layout/Navbar'
+import NavbarBrand from 'components/layout/NavbarBrand'
+import NavbarCollapsible from 'components/layout/NavbarCollapsible'
+import NavLink from 'components/layout/NavLink'
+import Dropdown from 'components/layout/Dropdown'
+import Icon from 'components/layout/Icon'
+import Span from 'components/layout/Span'
+import Image from 'components/layout/Image'
 
 const Top = () => (
     <Navbar>
