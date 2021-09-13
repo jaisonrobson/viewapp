@@ -19,6 +19,10 @@ const Content = () => {
                     <BoardDisplay />
                 </Col>
             </Row>
+
+            <Row>
+                <button className="btn btn-primary">FAFAFA</button>
+            </Row>
         </Container>
     )
 }
