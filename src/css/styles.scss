@@ -2,7 +2,7 @@
 @import "./bootswatch";
 
 $primary:       #202020;
-$secondary:     #afafaf;
+$secondary:     #707070;
 $success:       #2d6e3d;
 $info:          #33527a;
 $warning:       #aca651;
@@ -23,6 +23,22 @@ $theme-colors: (
 );
 // scss-docs-end theme-colors-map
 
+// Style anchor elements.
+
+$link-color:                              #FFFFFFA1;
+$link-decoration:                         none;
+$link-shade-percentage:                   20%;
+$link-hover-color:                        #FFFFFF;
+$link-hover-decoration:                   null;
+$link-text-shadow:                        1px 1px 3px #000;
+
+// H1,H2,H3,H4,H5,H6
+$headings-color:              $light;
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// sass styles.scss bootstrap.css
+// sass styles.scss bootstrap.css (COMANDO PARA TRANSPILAR ARQUIVOS SASS EM CSS)
+
+a {
+    text-shadow: $link-text-shadow;
+}
