@@ -21,7 +21,7 @@ const Content = () => {
             </Row>
 
             <Row>
-                <button className="btn btn-primary">FAFAFA</button>
+                <button className="btn btn-secondary">FAFAFA</button>
             </Row>
         </Container>
     )

@@ -24,7 +24,7 @@ const Top = () => (
                 <NavbarBrand>View</NavbarBrand>
 
                 <NavbarCollapsible>
-                    <NavbarCollapsible.Toggler color={isShow ? '#FFFFFFA1' : '#111'} />
+                    <NavbarCollapsible.Toggler />
 
                     <NavbarCollapsible.Collapse navbar>
                         <Container>
@@ -48,9 +48,6 @@ const Top = () => (
                 <Dropdown>
                     <Dropdown.Toggler
                         nav
-                        color="#FFFFFFA1"
-                        hoverColor="#FFF"
-                        textShadow="1px 1px 3px #000"
                     >
                         <Image
                             src={userNoAvatarImage}
