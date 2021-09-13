@@ -7,6 +7,10 @@ import castelo from 'images/castelo.jpg'
 import gatopordosol from 'images/gatopordosol.jpg'
 import surfando from 'images/surfando.jpg'
 
+import Container from 'components/layout/Container'
+import Row from 'components/layout/Row'
+import Col from 'components/layout/Col'
+
 const carouselDefaultProps = {
     width: '100vw',
     height: '85vh',
@@ -170,23 +174,27 @@ const Carousel = ({ interval = 6000, ...props }) => {
 
             <StyledInfoArea>
                 <StyledCaption>
-                    <div>
-                        <h1 style={{ color: '#fff' }}>
-                            {items[active].caption}
-                        </h1>
-                        <p
-                            style={{
-                                fontFamily: "'Roboto',sans-serif",
-                                fontSize: '12px',
-                                lineHeight: '1.5em',
-                                color: '#FFFFFFA8',
-                                textShadow: '1px 1px 2px #57575770',
-                            }}
-                        >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                        <button>Watch</button>
-                    </div>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <h1 style={{ color: '#fff' }}>
+                                    {items[active].caption}
+                                </h1>
+                                <p
+                                    style={{
+                                        fontFamily: "'Roboto',sans-serif",
+                                        fontSize: '12px',
+                                        lineHeight: '1.5em',
+                                        color: '#FFFFFFA8',
+                                        textShadow: '1px 1px 2px #57575770',
+                                    }}
+                                >
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <button>Watch</button>
+                            </Col>
+                        </Row>
+                    </Container>
                 </StyledCaption>
             </StyledInfoArea>
 
