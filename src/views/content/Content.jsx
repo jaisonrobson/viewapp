@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Row } from 'reactstrap'
 
 import Carousel from 'components/layout/Carousel'
-import BoardDisplay from 'components/layout/BoardDisplay'
+import HorizontalScroll from 'components/layout/HorizontalScroll'
+import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
+import Row from 'components/layout/Row'
 
 const Content = () => {
     return (
@@ -16,12 +17,8 @@ const Content = () => {
 
             <Row>
                 <Col padding="0px">
-                    <BoardDisplay />
+                    <HorizontalScroll />
                 </Col>
-            </Row>
-
-            <Row>
-                <button className="btn btn-secondary">FAFAFA</button>
             </Row>
         </Container>
     )

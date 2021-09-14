@@ -12,7 +12,7 @@ import Row from 'components/layout/Row'
 import Col from 'components/layout/Col'
 
 const carouselDefaultProps = {
-    width: '100vw',
+    width: '100%',
     height: '85vh',
 }
 
