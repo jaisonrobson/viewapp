@@ -9,6 +9,6 @@ const StyledImage = styled(({ objectFit, width, height, zIndex, ...props }) => <
     ${({ zIndex }) => zIndex ? `z-index: ${zIndex};` : ''}
 `
 
-const Image = (props) => <StyledImage alt="" {...props} />
+const Image = (props) => <StyledImage className="unselectable" alt="" {...props} />
 
 export default Image
