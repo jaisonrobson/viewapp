@@ -8,6 +8,8 @@ import Col from 'components/layout/Col'
 
 const Wrapper = styled.div`
     position: relative;
+
+    box-shadow: 0 18px 30px rgba(0,0,0,.28);
 `
 
 const CaptionOverlay = styled(({ width, height, ...props }) => <div {...props} />)`

@@ -23,11 +23,13 @@ const StyledHorizontalScroll = styled.div`
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-
     
     &::-webkit-scrollbar {
         display: none;
     }
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
 `
 
 const payload = [
@@ -66,7 +68,6 @@ const HorizontalScroll = ({ items: itemsProp = payload }) => {
             fluid
             style={{
                 marginTop: '2rem',
-                marginBottom: '2rem',
             }}
         >
             <Row>
@@ -74,9 +75,10 @@ const HorizontalScroll = ({ items: itemsProp = payload }) => {
                     <h2>Releases</h2>
                 </Col>
             </Row>
+
             <Row>
                 <Col>
-                    <StyledHorizontalScroll className="scrolling-wrapper-flexbox">
+                    <StyledHorizontalScroll>
                         {items.map(({ title, genre, src }, index) => (
                             <StyledHorizontalScrollItem
                                 key={src}
