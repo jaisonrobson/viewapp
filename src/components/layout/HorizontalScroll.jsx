@@ -66,6 +66,7 @@ const HorizontalScroll = ({ items: itemsProp = payload }) => {
             fluid
             style={{
                 marginTop: '2rem',
+                marginBottom: '2rem',
             }}
         >
             <Row>
