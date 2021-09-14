@@ -17,7 +17,23 @@ const Content = () => {
 
             <Row>
                 <Col padding="0px">
-                    <HorizontalScroll />
+                    <Container
+                        style={{
+                            marginTop: '2rem',
+                        }}
+                    >
+                        <Row>
+                            <Col>
+                                <h2>Releases</h2>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <HorizontalScroll />
+                            </Col>
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
         </Container>
