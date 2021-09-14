@@ -8,8 +8,11 @@ import Col from 'components/layout/Col'
 
 const Wrapper = styled.div`
     position: relative;
-
     box-shadow: 0 18px 30px rgba(0,0,0,.28);
+
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 
 const CaptionOverlay = styled(({ width, height, ...props }) => <div {...props} />)`
@@ -28,7 +31,6 @@ const GradientOverlay = styled(({ width, height, ...props }) => <div {...props} 
     z-index: 2;
     ${({ width }) => width ? `width: ${width};` : ''}
     ${({ height }) => height ? `height: ${height};` : ''}
-
     background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%, #000000 110%);
 `
 

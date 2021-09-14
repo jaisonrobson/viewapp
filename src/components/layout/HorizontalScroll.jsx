@@ -23,13 +23,13 @@ const StyledHorizontalScroll = styled.div`
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
     
     &::-webkit-scrollbar {
         display: none;
     }
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
 `
 
 const payload = [
