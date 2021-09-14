@@ -60,8 +60,8 @@ const Cover = ({ title, caption, image, width, height }) => (
                         width={`calc(${width} - 1rem)`}
                         overflowWrap="break-word"
                     >
-                        <StyledH4>{title}</StyledH4>
-                        <StyledP>{caption}</StyledP>
+                        <StyledH4 className="unselectable">{title}</StyledH4>
+                        <StyledP className="unselectable">{caption}</StyledP>
                     </Col>
                 </Row>
             </Container>
