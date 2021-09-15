@@ -5,7 +5,7 @@ import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
 import CardsDisplay from 'components/layout/CardsDisplay'
-
+import PostersDisplay from 'components/layout/PostersDisplay'
 
 const Content = () => {
     return (
@@ -39,6 +39,28 @@ const Content = () => {
                 </Col>
             </Row>
 
+            <Row>
+                <Col padding="0px">
+                    <Container
+                        fluid
+                        style={{
+                            marginTop: '2rem',
+                        }}
+                    >
+                        <Row>
+                            <Col>
+                                <h2>Featured</h2>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <PostersDisplay />
+                            </Col>
+                        </Row>
+                    </Container>
+                </Col>
+            </Row>
         </Container>
     )
 }
