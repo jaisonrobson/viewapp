@@ -17,10 +17,11 @@ const Wrapper = styled.div`
     position: relative;
 `
 
-const IndicatorsOverlay = styled.div`
-    position: absolute;
+const IndicatorsOverlay = styled(({ display, ...props }) => <div {...props} />)`
+    position: absolute;    
     width: 100%;
     height: 100%;
+    ${({ display }) => display ? `display: ${display};` : ''}
 `
 
 const Indicator = styled(({ innerRef, left, right, width, ...props }) => <div ref={innerRef} {...props} />)`
@@ -134,7 +135,7 @@ const HorizontalScroll = ({ items: itemsProp = payload }) => {
 
     return (
         <Wrapper>
-            <IndicatorsOverlay>
+            <IndicatorsOverlay display={isDesktop ? false : 'none'}>
                 <IndicatorReffered ref={leftIndicatorRef} left="0">
                     <Icon size="3x" icon={faChevronLeft} />
                 </IndicatorReffered>
