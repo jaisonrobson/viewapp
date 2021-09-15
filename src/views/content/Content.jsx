@@ -18,6 +18,7 @@ const Content = () => {
             <Row>
                 <Col padding="0px">
                     <Container
+                        fluid
                         style={{
                             marginTop: '2rem',
                         }}
