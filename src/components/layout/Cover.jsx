@@ -8,11 +8,12 @@ import Col from 'components/layout/Col'
 
 const Wrapper = styled.div`
     position: relative;
-    box-shadow: 0 18px 30px rgba(0,0,0,.28);
+    box-shadow: 0 12px 18px rgba(0,0,0,.28);
     transition: transform .2s;
 
     &:hover {
         transform: scale(1.1);
+        box-shadow: 0 10px 10px rgba(0,0,0,.28);
     }
 `
 
