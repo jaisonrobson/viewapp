@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { isDesktop } from 'react-device-detect'
 
-import Cover from 'components/layout/Cover'
 import Icon from 'components/layout/Icon'
 
 import AcordandoBem from 'images/AcordandoBem.jpg'
@@ -91,7 +90,7 @@ const payload = [
     },
 ]
 
-const HorizontalScroll = ({ items: itemsProp = payload }) => {
+const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
     const ref = useRef(null)
     const leftIndicatorRef = useRef(null)
     const rightIndicatorRef = useRef(null)
@@ -146,18 +145,12 @@ const HorizontalScroll = ({ items: itemsProp = payload }) => {
             </IndicatorsOverlay>
 
             <StyledHorizontalScroll ref={ref}>
-                {items.map(({ title, genre, src }, index) => (
+                {items.map((item, index) => (
                     <StyledHorizontalScrollItem
-                        key={src}
+                        key={item.src}
                         marginLeft={index !== 0 ? '2rem' : '0'}
                     >
-                        <Cover
-                            image={src}
-                            title={title}
-                            caption={genre}
-                            width="380px"
-                            height="250px"
-                        />
+                        {children(item)}
                     </StyledHorizontalScrollItem>
                 ))}
             </StyledHorizontalScroll>

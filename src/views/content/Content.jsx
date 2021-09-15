@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Carousel from 'components/layout/Carousel'
-import HorizontalScroll from 'components/layout/HorizontalScroll'
 import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
+import CardsDisplay from 'components/layout/CardsDisplay'
+
 
 const Content = () => {
     return (
@@ -31,12 +32,13 @@ const Content = () => {
 
                         <Row>
                             <Col>
-                                <HorizontalScroll />
+                                <CardsDisplay />
                             </Col>
                         </Row>
                     </Container>
                 </Col>
             </Row>
+
         </Container>
     )
 }
