@@ -39,7 +39,7 @@ const Content = () => {
                 </Col>
             </Row>
 
-            <Row>
+            <Row className="bg-gray-700">
                 <Col padding="0px">
                     <Container
                         fluid
