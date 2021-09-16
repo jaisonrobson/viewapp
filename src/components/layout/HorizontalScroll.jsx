@@ -95,7 +95,7 @@ const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
     const leftIndicatorRef = useRef(null)
     const rightIndicatorRef = useRef(null)
     const [items,] = useState(itemsProp)
-
+    const [showIndicators, setShowIndicators] = useState(false)
     const scrollLeft = () => {
         const node = reactDom.findDOMNode(ref.current)
 
@@ -104,7 +104,6 @@ const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
             behavior: 'smooth',
         })
     }
-
     const scrollRight = () => {
         const node = reactDom.findDOMNode(ref.current)
 
@@ -119,9 +118,17 @@ const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
 
         const overLeft = () => scrollLeft()
         const overRight = () => scrollRight()
+        const displayIndicators = () => setShowIndicators(true)
 
         const nodeLeft = reactDom.findDOMNode(leftIndicatorRef.current)
         const nodeRight = reactDom.findDOMNode(rightIndicatorRef.current)
+        const node = reactDom.findDOMNode(ref.current)
+
+        if (node) {
+            if (node.scrollWidth > window.innerWidth) {
+                displayIndicators()
+            }
+        }
 
         nodeLeft.addEventListener("mouseover", overLeft)
         nodeRight.addEventListener("mouseover", overRight)
@@ -134,7 +141,7 @@ const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
 
     return (
         <Wrapper>
-            <IndicatorsOverlay display={isDesktop ? false : 'none'}>
+            <IndicatorsOverlay display={showIndicators ? false : 'none'}>
                 <IndicatorReffered ref={leftIndicatorRef} left="0">
                     <Icon size="3x" icon={faChevronLeft} />
                 </IndicatorReffered>
