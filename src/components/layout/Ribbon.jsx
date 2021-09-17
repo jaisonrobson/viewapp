@@ -5,8 +5,8 @@ import ViagemInacreditavel from 'images/ViagemInacreditavel.jpg'
 
 const StyledWrapper = styled(({ backgroundImage, ...props }) => <div {...props} />)`
     background-image: url(${({ backgroundImage }) => backgroundImage});
-    -webkit-background-size: 120%;
-    background-size: 120%;
+    -webkit-background-size: 200%;
+    background-size: 200%;
     background-repeat: no-repeat;
     background-position: center;
 
