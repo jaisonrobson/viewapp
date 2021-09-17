@@ -6,6 +6,7 @@ import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
 import CardsDisplay from 'components/layout/CardsDisplay'
 import PostersDisplay from 'components/layout/PostersDisplay'
+import Ribbon from 'components/layout/Ribbon'
 
 const Content = () => {
     return (
@@ -59,6 +60,12 @@ const Content = () => {
                             </Col>
                         </Row>
                     </Container>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col padding="0px">
+                    <Ribbon />
                 </Col>
             </Row>
         </Container>

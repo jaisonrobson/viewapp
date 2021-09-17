@@ -30,7 +30,7 @@ const payload = [
     },
     {
         src: Nave,
-        genre: 'Scifi',
+        genre: 'Sci-fi',
         title: 'Into the Space',
     },
     {
@@ -45,7 +45,7 @@ const payload = [
     },
     {
         src: Robo,
-        genre: 'Scifi',
+        genre: 'Sci-fi',
         title: 'Fight to Death',
     },
     {
