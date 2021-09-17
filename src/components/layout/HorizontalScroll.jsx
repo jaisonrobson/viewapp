@@ -49,7 +49,7 @@ const StyledHorizontalScroll = styled.div`
     overflow-x: auto;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     
     &::-webkit-scrollbar {
         display: none;
