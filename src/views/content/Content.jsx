@@ -27,7 +27,7 @@ const Content = () => {
                     >
                         <Row>
                             <Col>
-                                <h2>Releases</h2>
+                                <h2 className="text-gray-100">Releases</h2>
                             </Col>
                         </Row>
 
@@ -53,7 +53,7 @@ const Content = () => {
                     >
                         <Row>
                             <Col>
-                                <h2>Featured</h2>
+                                <h2 className="text-gray-100">Featured</h2>
                             </Col>
                         </Row>
 
