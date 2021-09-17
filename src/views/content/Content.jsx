@@ -17,7 +17,7 @@ const Content = () => {
                 </Col>
             </Row>
 
-            <Row>
+            <Row boxShadow="0 -10px 15px rgba(0,0,0,.1) inset">
                 <Col padding="0px">
                     <Container
                         fluid
@@ -40,7 +40,10 @@ const Content = () => {
                 </Col>
             </Row>
 
-            <Row className="bg-gray-700">
+            <Row
+                className="bg-gray-700"
+                boxShadow="0 -10px 15px rgba(0,0,0,.1) inset"
+            >
                 <Col padding="0px">
                     <Container
                         fluid
@@ -63,7 +66,7 @@ const Content = () => {
                 </Col>
             </Row>
 
-            <Row>
+            <Row boxShadow="0 -10px 15px rgba(0,0,0,.1) inset">
                 <Col padding="0px">
                     <Ribbon />
                 </Col>
