@@ -43,20 +43,22 @@ const StyledCaption = styled.div`
     z-index: 3;
 `
 
+const StyledContainer = styled(Container)`
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    flex-direction: column;
+`
+
 const Ribbon = ({ image = ViagemInacreditavel, ...props }) => {
     return (
         <StyledWrapper>
             <StyledOverlay />
 
             <StyledCaption>
-                <Container style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'center',
-                    height: 'inherit',
-                    width: 'inherit',
-                    flexDirection: 'column',
-                }}>
+                <StyledContainer>
                     <Row>
                         <Col>
                             <h2 className="text-gray-100">Fafafa</h2>
@@ -76,7 +78,7 @@ const Ribbon = ({ image = ViagemInacreditavel, ...props }) => {
                             </p>
                         </Col>
                     </Row>
-                </Container>
+                </StyledContainer>
             </StyledCaption>
 
             <StyledBackground backgroundImage={image} {...props} />
