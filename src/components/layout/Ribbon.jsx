@@ -5,9 +5,6 @@ import Container from 'components/layout/Container'
 import Row from 'components/layout/Row'
 import Col from 'components/layout/Col'
 
-import ViagemInacreditavel from 'images/ViagemInacreditavel.jpg'
-
-
 const StyledWrapper = styled.div`
     position: relative;
 `
@@ -52,7 +49,16 @@ const StyledContainer = styled(Container)`
     flex-direction: column;
 `
 
-const Ribbon = ({ image = ViagemInacreditavel, ...props }) => {
+const initialPayload = {
+    title: 'none',
+    year: 0,
+    duration: 0,
+    genre: 'none',
+    synopsis: 'none',
+    imageSrc: null,
+}
+
+const Ribbon = ({ payload: { title, year, duration, genre, synopsis, imageSrc } = initialPayload, ...props }) => {
     return (
         <StyledWrapper>
             <StyledOverlay />
@@ -61,27 +67,27 @@ const Ribbon = ({ image = ViagemInacreditavel, ...props }) => {
                 <StyledContainer>
                     <Row>
                         <Col>
-                            <h2 className="text-gray-100">Fafafa</h2>
+                            <h2 className="text-gray-100">{title}</h2>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>2021</div>
-                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>165 min</div>
-                            <div className="text-gray-400" style={{ display: 'inline' }}>Adventure</div>
+                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{year}</div>
+                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{duration} min</div>
+                            <div className="text-gray-400" style={{ display: 'inline' }}>{genre}</div>
                         </Col>
                     </Row>
                     <Row marginTop="1rem">
                         <Col>
                             <p className="text-gray-500" style={{ fontFamily: 'Poppins, sans-serif', textShadow: '2px 2px 5px #000' }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet, est a pretium bibendum, tellus elit fringilla libero, et tempus neque lectus sit amet odio.
+                                {synopsis}
                             </p>
                         </Col>
                     </Row>
                 </StyledContainer>
             </StyledCaption>
 
-            <StyledBackground backgroundImage={image} {...props} />
+            <StyledBackground backgroundImage={imageSrc} {...props} />
         </StyledWrapper>
     )
 }
