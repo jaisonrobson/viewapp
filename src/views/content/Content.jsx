@@ -7,7 +7,7 @@ import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
 import CardsDisplay from 'components/layout/CardsDisplay'
 import PostersDisplay from 'components/layout/PostersDisplay'
-import Ribbon from 'components/layout/Ribbon'
+import MovieRibbon from 'components/custom/MovieRibbon'
 
 const StyledRow = styled((props) => <Row {...props} />)`
     box-shadow: 0 -10px 15px rgba(0,0,0,.1) inset;
@@ -68,7 +68,7 @@ const Content = () => {
 
             <StyledRow>
                 <StyledCol>
-                    <Ribbon />
+                    <MovieRibbon />
                 </StyledCol>
             </StyledRow>
         </Container>
