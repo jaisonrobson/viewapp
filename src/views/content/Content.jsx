@@ -5,8 +5,8 @@ import Carousel from 'components/layout/Carousel'
 import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
-import CardsDisplay from 'components/layout/CardsDisplay'
-import PostersDisplay from 'components/layout/PostersDisplay'
+import CardsDisplay from 'components/custom/CardsDisplay'
+import PostersDisplay from 'components/custom/PostersDisplay'
 import MovieRibbon from 'components/custom/MovieRibbon'
 
 const StyledRow = styled((props) => <Row {...props} />)`
