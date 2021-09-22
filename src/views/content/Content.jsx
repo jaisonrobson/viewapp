@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Carousel from 'components/layout/Carousel'
 import Container from 'components/layout/Container'
@@ -8,23 +9,30 @@ import CardsDisplay from 'components/layout/CardsDisplay'
 import PostersDisplay from 'components/layout/PostersDisplay'
 import Ribbon from 'components/layout/Ribbon'
 
+const StyledRow = styled((props) => <Row {...props} />)`
+    box-shadow: 0 -10px 15px rgba(0,0,0,.1) inset;
+`
+
+const StyledCol = styled((props) => <Col {...props} />)`
+    padding: 0px;
+`
+
+const StyledContainer = styled((props) => <Container {...props} />)`
+    margin-top: 2rem;
+`
+
 const Content = () => {
     return (
         <Container fluid>
             <Row>
-                <Col padding="0px">
+                <StyledCol>
                     <Carousel />
-                </Col>
+                </StyledCol>
             </Row>
 
-            <Row boxShadow="0 -10px 15px rgba(0,0,0,.1) inset">
-                <Col padding="0px">
-                    <Container
-                        fluid
-                        style={{
-                            marginTop: '2rem',
-                        }}
-                    >
+            <StyledRow>
+                <StyledCol>
+                    <StyledContainer fluid>
                         <Row>
                             <Col>
                                 <h2 className="text-gray-100">Releases</h2>
@@ -36,21 +44,13 @@ const Content = () => {
                                 <CardsDisplay />
                             </Col>
                         </Row>
-                    </Container>
-                </Col>
-            </Row>
+                    </StyledContainer>
+                </StyledCol>
+            </StyledRow>
 
-            <Row
-                className="bg-gray-700"
-                boxShadow="0 -10px 15px rgba(0,0,0,.1) inset"
-            >
-                <Col padding="0px">
-                    <Container
-                        fluid
-                        style={{
-                            marginTop: '2rem',
-                        }}
-                    >
+            <StyledRow className="bg-gray-700">
+                <StyledCol>
+                    <StyledContainer fluid>
                         <Row>
                             <Col>
                                 <h2 className="text-gray-100">Featured</h2>
@@ -62,15 +62,15 @@ const Content = () => {
                                 <PostersDisplay />
                             </Col>
                         </Row>
-                    </Container>
-                </Col>
-            </Row>
+                    </StyledContainer>
+                </StyledCol>
+            </StyledRow>
 
-            <Row boxShadow="0 -10px 15px rgba(0,0,0,.1) inset">
-                <Col padding="0px">
+            <StyledRow>
+                <StyledCol>
                     <Ribbon />
-                </Col>
-            </Row>
+                </StyledCol>
+            </StyledRow>
         </Container>
     )
 }
