@@ -6,12 +6,6 @@ import { isDesktop } from 'react-device-detect'
 
 import Icon from 'components/layout/Icon'
 
-import AcordandoBem from 'images/AcordandoBem.jpg'
-import AVidaEAMorte from 'images/AVidaEAMorte.jpg'
-import AProvaDeBafometro from 'images/AProvaDeBafometro.jpg'
-import DoceJuventude from 'images/DoceJuventude.jpg'
-import EsplendorDaNatureza from 'images/EsplendorDaNatureza.jpg'
-
 const Wrapper = styled.div`
     position: relative;
 `
@@ -62,35 +56,15 @@ const StyledHorizontalScrollItem = styled(({ marginLeft, marginRight, itemSize, 
     ${({ marginRight }) => marginRight ? `margin-right: ${marginRight};` : ''}
 `
 
-const payload = [
+const initialItems = [
     {
-        src: AcordandoBem,
-        genre: 'Casual',
-        title: 'Waking up Well',
-    },
-    {
-        src: AVidaEAMorte,
-        genre: 'Action',
-        title: 'Life and Death',
-    },
-    {
-        src: AProvaDeBafometro,
-        genre: 'Action',
-        title: '2 Fast for You',
-    },
-    {
-        src: DoceJuventude,
-        genre: 'Casual',
-        title: 'A long time ago',
-    },
-    {
-        src: EsplendorDaNatureza,
-        genre: 'Nature',
-        title: 'Colors of Nature',
-    },
+        src: null,
+        genre: 'none',
+        title: 'none',
+    }
 ]
 
-const HorizontalScroll = ({ items: itemsProp = payload, children }) => {
+const HorizontalScroll = ({ items: itemsProp = initialItems, children }) => {
     const ref = useRef(null)
     const leftIndicatorRef = useRef(null)
     const rightIndicatorRef = useRef(null)
