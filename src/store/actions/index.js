@@ -1,7 +1,7 @@
 import { login } from "./user"
-import { setMovies } from "./movies"
+import { fetchMovies } from "./movies"
 
 export {
     login,
-    setMovies,
+    fetchMovies,
 }

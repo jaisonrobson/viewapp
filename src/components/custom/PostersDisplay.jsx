@@ -5,9 +5,9 @@ import Cover from 'components/layout/Cover'
 
 const PostersDisplay = ({ payload }) => (
     <HorizontalScroll items={payload}>
-        {({ src, genre, title }) =>
+        {({ imageSrc, genre, title }) =>
             <Cover
-                image={src}
+                image={imageSrc}
                 title={title}
                 caption={genre}
                 width="300px"

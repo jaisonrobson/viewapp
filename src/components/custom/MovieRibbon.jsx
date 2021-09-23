@@ -23,10 +23,10 @@ const initialPayload = {
     synopsis: 'none',
 }
 
-const MovieRibbon = () => {
+const MovieRibbon = ({ payload = initialPayload }) => {
     return (
-        <Ribbon>
-            {({ payload: { title, year, duration, genre, synopsis } = initialPayload }) => (
+        <Ribbon payload={payload}>
+            {({ title, year, duration, genre, synopsis }) => (
                 <StyledContainer>
                     <Row>
                         <Col>

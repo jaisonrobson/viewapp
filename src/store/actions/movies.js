@@ -1,3 +1,3 @@
-export function setMovies(dispatch, movies) {
-    dispatch({ type: 'setMovies', payload: movies })
+export function fetchMovies(dispatch, movies) {
+    dispatch({ type: 'fetchMovies', payload: movies })
 }

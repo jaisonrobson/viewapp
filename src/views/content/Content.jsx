@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import _ from 'lodash'
 
 import Carousel from 'components/layout/Carousel'
 import Container from 'components/layout/Container'
@@ -8,6 +9,7 @@ import Row from 'components/layout/Row'
 import CardsDisplay from 'components/custom/CardsDisplay'
 import PostersDisplay from 'components/custom/PostersDisplay'
 import MovieRibbon from 'components/custom/MovieRibbon'
+import { ReducerContext } from 'contexts/withReducerContext'
 
 const StyledRow = styled((props) => <Row {...props} />)`
     box-shadow: 0 -10px 15px rgba(0,0,0,.1) inset;
@@ -22,6 +24,10 @@ const StyledContainer = styled((props) => <Container {...props} />)`
 `
 
 const Content = () => {
+    const { movies: moviesProp } = useContext(ReducerContext)
+    const indexToRemove = _.random(0, moviesProp.length - 1)
+    const movies = _.filter(moviesProp, (element, index) => index !== indexToRemove)
+
     return (
         <Container fluid>
             <Row>
@@ -41,7 +47,7 @@ const Content = () => {
 
                         <Row>
                             <Col>
-                                <CardsDisplay />
+                                <CardsDisplay payload={movies} />
                             </Col>
                         </Row>
                     </StyledContainer>
@@ -59,7 +65,7 @@ const Content = () => {
 
                         <Row>
                             <Col>
-                                <PostersDisplay />
+                                <PostersDisplay payload={movies} />
                             </Col>
                         </Row>
                     </StyledContainer>
@@ -68,7 +74,7 @@ const Content = () => {
 
             <StyledRow>
                 <StyledCol>
-                    <MovieRibbon />
+                    <MovieRibbon payload={moviesProp[indexToRemove]} />
                 </StyledCol>
             </StyledRow>
         </Container>

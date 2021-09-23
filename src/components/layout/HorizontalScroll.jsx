@@ -64,11 +64,10 @@ const initialItems = [
     }
 ]
 
-const HorizontalScroll = ({ items: itemsProp = initialItems, children }) => {
+const HorizontalScroll = ({ items = initialItems, children }) => {
     const ref = useRef(null)
     const leftIndicatorRef = useRef(null)
     const rightIndicatorRef = useRef(null)
-    const [items,] = useState(itemsProp)
     const [showIndicators, setShowIndicators] = useState(false)
     const scrollLeft = () => {
         const node = reactDom.findDOMNode(ref.current)
@@ -128,7 +127,7 @@ const HorizontalScroll = ({ items: itemsProp = initialItems, children }) => {
             <StyledHorizontalScroll ref={ref}>
                 {items.map((item, index) => (
                     <StyledHorizontalScrollItem
-                        key={item.src}
+                        key={item.imageSrc}
                         marginLeft={index !== 0 ? '2rem' : '0'}
                     >
                         {children(item)}
