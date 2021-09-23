@@ -24,7 +24,7 @@ import Robo from 'images/Robo.jpg'
 const movies = [
     {
         title: 'Waking up Well',
-        synopsys: 'Sed vehicula fringilla ex ut commodo. Etiam nec gravida quam.',
+        synopsis: 'Sed vehicula fringilla ex ut commodo. Etiam nec gravida quam.',
         genre: 'Casual',
         year: 2006,
         duration: 45,
@@ -32,7 +32,7 @@ const movies = [
     },
     {
         title: 'Life and Death',
-        synopsys: 'Morbi bibendum quis nisl quis fringilla. Nunc blandit ligula in.',
+        synopsis: 'Morbi bibendum quis nisl quis fringilla. Nunc blandit ligula in.',
         genre: 'Documentary',
         year: 2010,
         duration: 50,
@@ -40,7 +40,7 @@ const movies = [
     },
     {
         title: 'High Speed',
-        synopsys: 'Curabitur ultrices ullamcorper neque, dictum sagittis massa ultricies sed. Maecenas.',
+        synopsis: 'Curabitur ultrices ullamcorper neque, dictum sagittis massa ultricies sed. Maecenas.',
         genre: 'Action',
         year: 2012,
         duration: 75,
@@ -48,7 +48,7 @@ const movies = [
     },
     {
         title: 'Sweet Youth',
-        synopsys: 'Aliquam eget risus mi. Pellentesque lobortis mi leo, quis accumsan.',
+        synopsis: 'Aliquam eget risus mi. Pellentesque lobortis mi leo, quis accumsan.',
         genre: 'Casual',
         year: 2008,
         duration: 63,
@@ -56,7 +56,7 @@ const movies = [
     },
     {
         title: 'Colors of Nature',
-        synopsys: 'Sed sollicitudin gravida nulla, nec finibus lorem. Sed ac libero.',
+        synopsis: 'Sed sollicitudin gravida nulla, nec finibus lorem. Sed ac libero.',
         genre: 'Documentary',
         year: 2009,
         duration: 45,
@@ -64,7 +64,7 @@ const movies = [
     },
     {
         title: 'Unbelievable Journey',
-        synopsys: 'Pellentesque massa leo, venenatis tristique lorem non, aliquet porttitor libero.',
+        synopsis: 'Pellentesque massa leo, venenatis tristique lorem non, aliquet porttitor libero.',
         genre: 'Adventure',
         year: 2016,
         duration: 127,
@@ -72,7 +72,7 @@ const movies = [
     },
     {
         title: 'Hidden Temples',
-        synopsys: 'Sed ac est tincidunt odio suscipit rutrum. Curabitur fermentum finibus.',
+        synopsis: 'Sed ac est tincidunt odio suscipit rutrum. Curabitur fermentum finibus.',
         genre: 'Documentary',
         year: 2010,
         duration: 49,
@@ -80,7 +80,7 @@ const movies = [
     },
     {
         title: 'Mountain King',
-        synopsys: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.',
+        synopsis: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.',
         genre: 'Action',
         year: 2018,
         duration: 135,
@@ -88,7 +88,7 @@ const movies = [
     },
     {
         title: 'Beautiful in Everything',
-        synopsys: 'Nullam tellus ante, luctus ac mollis sed, vulputate vitae nulla.',
+        synopsis: 'Nullam tellus ante, luctus ac mollis sed, vulputate vitae nulla.',
         genre: 'Documentary',
         year: 2013,
         duration: 70,
@@ -96,7 +96,7 @@ const movies = [
     },
     {
         title: 'After Midnight',
-        synopsys: 'Donec mattis sem eu tristique egestas. Ut eleifend est dolor.',
+        synopsis: 'Donec mattis sem eu tristique egestas. Ut eleifend est dolor.',
         genre: 'Horror',
         year: 2020,
         duration: 140,
@@ -104,7 +104,7 @@ const movies = [
     },
     {
         title: 'Tales of Nasdaria',
-        synopsys: 'In tempus ut neque nec convallis. Aenean mollis mi tristique.',
+        synopsis: 'In tempus ut neque nec convallis. Aenean mollis mi tristique.',
         genre: 'Fantasy',
         year: 2020,
         duration: 120,
@@ -112,7 +112,7 @@ const movies = [
     },
     {
         title: 'Beyond the Sky',
-        synopsys: 'Curabitur sit amet laoreet velit. Nulla tincidunt velit augue, consequat.',
+        synopsis: 'Curabitur sit amet laoreet velit. Nulla tincidunt velit augue, consequat.',
         genre: 'Sci-fy',
         year: 2021,
         duration: 138,
@@ -120,7 +120,7 @@ const movies = [
     },
     {
         title: 'Fight to Death',
-        synopsys: 'Quisque a blandit massa. Morbi id dapibus est, id interdum.',
+        synopsis: 'Quisque a blandit massa. Morbi id dapibus est, id interdum.',
         genre: 'Sci-fy',
         year: 2019,
         duration: 118,
