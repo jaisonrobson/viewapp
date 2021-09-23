@@ -21,6 +21,7 @@ const initialPayload = {
     duration: 0,
     genre: 'none',
     synopsis: 'none',
+    imageSrc: null,
 }
 
 const MovieRibbon = ({ payload = initialPayload }) => {
