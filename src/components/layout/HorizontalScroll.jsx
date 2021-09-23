@@ -61,6 +61,7 @@ const initialItems = [
         src: null,
         genre: 'none',
         title: 'none',
+        imageSrc: null,
     }
 ]
 
