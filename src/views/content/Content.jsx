@@ -6,10 +6,15 @@ import Carousel from 'components/layout/Carousel'
 import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
+
 import CardsDisplay from 'components/custom/CardsDisplay'
 import PostersDisplay from 'components/custom/PostersDisplay'
 import MovieRibbon from 'components/custom/MovieRibbon'
+
 import { ReducerContext } from 'contexts/withReducerContext'
+
+import { randomSliceIntoNGivenValues } from 'util/array'
+
 
 const StyledRow = styled((props) => <Row {...props} />)`
     box-shadow: 0 -10px 15px rgba(0,0,0,.1) inset;
@@ -24,9 +29,20 @@ const StyledContainer = styled((props) => <Container {...props} />)`
 `
 
 const Content = () => {
-    const { movies: moviesProp } = useContext(ReducerContext)
-    const indexToRemove = _.random(0, moviesProp.length - 1)
-    const movies = _.filter(moviesProp, (element, index) => index !== indexToRemove)
+    const { movies } = useContext(ReducerContext)
+
+    const [
+        cardsPayload,
+        postersPayload,
+        ribbonPayload,
+    ] = randomSliceIntoNGivenValues(
+        movies,
+        [
+            parseInt((movies.length - 1) / 2),
+            parseInt(movies.length / 2),
+            1,
+        ],
+    )
 
     return (
         <Container fluid>
@@ -47,7 +63,7 @@ const Content = () => {
 
                         <Row>
                             <Col>
-                                <CardsDisplay payload={movies} />
+                                <CardsDisplay payload={cardsPayload} />
                             </Col>
                         </Row>
                     </StyledContainer>
@@ -65,7 +81,7 @@ const Content = () => {
 
                         <Row>
                             <Col>
-                                <PostersDisplay payload={movies} />
+                                <PostersDisplay payload={postersPayload} />
                             </Col>
                         </Row>
                     </StyledContainer>
@@ -74,7 +90,7 @@ const Content = () => {
 
             <StyledRow>
                 <StyledCol>
-                    <MovieRibbon payload={moviesProp[indexToRemove]} />
+                    <MovieRibbon payload={_.head(ribbonPayload)} />
                 </StyledCol>
             </StyledRow>
         </Container>
