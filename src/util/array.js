@@ -1,7 +1,8 @@
 import _ from "lodash"
 
 export const randomSliceIntoNGivenValues = (array, sliceArray) => {
-    if (_.reduce(sliceArray, (sum, n) => sum + n) !== array.length) return array
+    if (array.length === 0) return _.fill(Array(sliceArray.length), undefined)
+    if (_.reduce(sliceArray, (sum, n) => sum + n) !== array.length) return _.fill(Array(sliceArray.length), undefined)
 
     let result = []
     let mutatedArray = _.clone(array)
