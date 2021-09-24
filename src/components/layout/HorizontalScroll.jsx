@@ -58,7 +58,6 @@ const StyledHorizontalScrollItem = styled(({ marginLeft, marginRight, itemSize, 
 
 const initialItems = [
     {
-        src: null,
         genre: 'none',
         title: 'none',
         imageSrc: null,
