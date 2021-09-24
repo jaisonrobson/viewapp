@@ -1,38 +1,7 @@
 import ReactDOM from 'react-dom'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import { isDesktop } from 'react-device-detect'
-
-import castelo from 'images/castelo.jpg'
-import gatopordosol from 'images/gatopordosol.jpg'
-import surfando from 'images/surfando.jpg'
-
-import Container from 'components/layout/Container'
-import Row from 'components/layout/Row'
-import Col from 'components/layout/Col'
-
-const carouselDefaultProps = {
-    width: '100%',
-    height: '85vh',
-}
-
-const payload = [
-    {
-        src: castelo,
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: gatopordosol,
-        altText: 'Slide 2',
-        caption: 'Slide 2'
-    },
-    {
-        src: surfando,
-        altText: 'Slide 3',
-        caption: 'Slide 3'
-    }
-];
 
 const StyledItem = styled(({ backgroundImage, opacity, ...props }) => <div {...props} />)`
     background-image: url(${({ backgroundImage }) => backgroundImage});
@@ -82,12 +51,12 @@ const StyledIndicator = styled(({ opacity, cursor, ...props }) => <button {...pr
     border-radius: 50%;
 `
 
-const StyledInfoArea = styled.div`
+const StyledCaptionWrapper = styled(({ width, height, ...props }) => <div {...props} />)`
     position: absolute;
-    width: ${carouselDefaultProps.width};
-    height: ${carouselDefaultProps.height};
     padding: 2rem;
     z-index: 3;
+    ${({ width }) => width ? `width: ${width};` : ''}
+    ${({ height }) => height ? `height: ${height};` : ''}
 `
 
 const StyledCaption = styled.div`
@@ -101,16 +70,18 @@ const StyledCaption = styled.div`
     color: #FFFFFF;
 `
 
-const StyledInner = styled.div`
+const StyledBackground = styled.div`
     width: 100%;
     height: 100%;
 `
 
-const StyledCarousel = styled.div`
+const StyledCarousel = styled(({ width, height, innerRef, ...props }) => <div ref={innerRef} {...props} />)`
     position: relative;
-    width: ${carouselDefaultProps.width};
-    height: ${carouselDefaultProps.height};
+    ${({ width }) => width ? `width: ${width};` : ''}
+    ${({ height }) => height ? `height: ${height};` : ''}
 `
+
+const ReferredCarousel = forwardRef((props, ref) => <StyledCarousel innerRef={ref} {...props} />)
 
 const StyledGradient = styled(({ backgroundColor, backgroundTo, ...props }) => <div {...props} />)`
     position: absolute;
@@ -129,12 +100,26 @@ const StyledOverlay = styled.div`
     height: 100%;
     background: linear-gradient(to bottom,rgba(0,0,0,.7) 0%,rgba(0,0,0,.5) 25%);
 `
+
+const initialPayload = [
+    {
+        src: null,
+    },
+]
+
 //Este componente sera refatorado em outro momento.
-const Carousel = ({ interval = 6000, ...props }) => {
+const Carousel = ({
+    interval = 6000,
+    isIndicators = true,
+    width = '100%',
+    height = '85vh',
+    imageParameter = 'src',
+    caption = () => null,
+    payload = initialPayload,
+}) => {
     const ref = useRef(null)
     const [active, setActive] = useState(0)
-    const [items,] = useState(payload)
-    const next = () => setActive(active === (items.length - 1) ? 0 : active + 1)
+    const next = () => setActive(active === (payload.length - 1) ? 0 : active + 1)
 
     useEffect(
         () => {
@@ -159,54 +144,36 @@ const Carousel = ({ interval = 6000, ...props }) => {
     )
 
     return (
-        <StyledCarousel ref={ref}>
-            <StyledIndicators>
-                {items.map((element, index) => (
-                    <StyledIndicator
-                        key={element.src}
-                        onClick={() => setActive(index)}
-                        disabled={active === index}
-                        opacity={active === index ? '1' : false}
-                        cursor={active === index ? 'default' : 'pointer'}
-                    />
-                ))}
-            </StyledIndicators>
+        <ReferredCarousel ref={ref} width={width} height={height}>
+            {isIndicators ? (
+                <StyledIndicators>
+                    {payload.map((element, index) => (
+                        <StyledIndicator
+                            key={element[imageParameter]}
+                            onClick={() => setActive(index)}
+                            disabled={active === index}
+                            opacity={active === index ? '1' : false}
+                            cursor={active === index ? 'default' : 'pointer'}
+                        />
+                    ))}
+                </StyledIndicators>
+            ) : null}
 
-            <StyledInfoArea>
+            <StyledCaptionWrapper width={width} height={height}>
                 <StyledCaption>
-                    <Container>
-                        <Row>
-                            <Col>
-                                <h1 style={{ color: '#fff' }}>
-                                    {items[active].caption}
-                                </h1>
-                                <p
-                                    style={{
-                                        fontFamily: "'Roboto',sans-serif",
-                                        fontSize: '12px',
-                                        lineHeight: '1.5em',
-                                        color: '#FFFFFFA8',
-                                        textShadow: '1px 1px 2px #57575770',
-                                    }}
-                                >
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                </p>
-                                <button>Watch</button>
-                            </Col>
-                        </Row>
-                    </Container>
+                    {caption({ payload, active })}
                 </StyledCaption>
-            </StyledInfoArea>
+            </StyledCaptionWrapper>
 
-            <StyledInner>
-                {items.map((element, index) => (
+            <StyledBackground>
+                {payload.map((element, index) => (
                     <StyledItem
-                        key={element.src}
-                        backgroundImage={items[index].src}
+                        key={element[imageParameter]}
+                        backgroundImage={payload[index][imageParameter]}
                         opacity={active === index ? '1' : '0'}
                     />
                 ))}
-            </StyledInner>
+            </StyledBackground>
 
             <StyledOverlay />
 
@@ -219,7 +186,7 @@ const Carousel = ({ interval = 6000, ...props }) => {
                 backgroundColor="#202020"
                 backgroundTo="top"
             />
-        </StyledCarousel>
+        </ReferredCarousel>
     )
 }
 
