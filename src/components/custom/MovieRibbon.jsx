@@ -31,19 +31,19 @@ const MovieRibbon = ({ payload = initialPayload }) => {
                 <StyledContainer>
                     <Row>
                         <Col>
-                            <h2 className="text-gray-100">{title}</h2>
+                            <h2 className="text-gray-100 unselectable">{title}</h2>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{year}</div>
-                            <div className="text-gray-400" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{duration} min</div>
-                            <div className="text-gray-400" style={{ display: 'inline' }}>{genre}</div>
+                            <div className="text-gray-400 unselectable" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{year}</div>
+                            <div className="text-gray-400 unselectable" style={{ display: 'inline', marginRight: '2rem', paddingRight: '2rem', borderRight: '1px solid' }}>{duration} min</div>
+                            <div className="text-gray-400 unselectable" style={{ display: 'inline' }}>{genre}</div>
                         </Col>
                     </Row>
                     <Row marginTop="1rem">
                         <Col>
-                            <p className="text-gray-500" style={{ fontFamily: 'Poppins, sans-serif', textShadow: '2px 2px 5px #000' }}>
+                            <p className="text-gray-500 unselectable" style={{ fontFamily: 'Poppins, sans-serif', textShadow: '2px 2px 5px #000' }}>
                                 {synopsis}
                             </p>
                         </Col>
