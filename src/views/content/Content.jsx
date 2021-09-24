@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Carousel from 'components/layout/Carousel'
 import Container from 'components/layout/Container'
 import Col from 'components/layout/Col'
 import Row from 'components/layout/Row'
 
+import MoviesCarousel from 'components/custom/MoviesCarousel'
 import CardsDisplay from 'components/custom/CardsDisplay'
 import PostersDisplay from 'components/custom/PostersDisplay'
 import MovieRibbon from 'components/custom/MovieRibbon'
@@ -32,14 +32,16 @@ const Content = () => {
     const { movies } = useContext(ReducerContext)
 
     const [
+        carouselPayload,
         cardsPayload,
         postersPayload,
         ribbonPayload,
     ] = randomSliceIntoNGivenValues(
         movies,
         [
-            parseInt((movies.length - 1) / 2),
-            parseInt(movies.length / 2),
+            3,
+            _.floor((movies.length - 4) / 2),
+            _.ceil((movies.length - 4) / 2),
             1,
         ],
     )
@@ -48,7 +50,7 @@ const Content = () => {
         <Container fluid>
             <Row>
                 <StyledCol>
-                    <Carousel />
+                    <MoviesCarousel payload={carouselPayload} />
                 </StyledCol>
             </Row>
 

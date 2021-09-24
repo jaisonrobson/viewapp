@@ -20,6 +20,9 @@ import LuaNova from 'images/LuaNova.jpg'
 import MagoFantasia from 'images/MagoFantasia.jpg'
 import Nave from 'images/Nave.jpg'
 import Robo from 'images/Robo.jpg'
+import castelo from 'images/castelo.jpg'
+import gatopordosol from 'images/gatopordosol.jpg'
+import surfando from 'images/surfando.jpg'
 
 const movies = [
     {
@@ -125,6 +128,30 @@ const movies = [
         year: 2019,
         duration: 118,
         imageSrc: Robo,
+    },
+    {
+        title: 'Castle of Dracula',
+        synopsis: 'Aenean quam massa, consectetur vitae nulla ut, malesuada accumsan arcu.',
+        genre: 'Horror',
+        year: 2020,
+        duration: 102,
+        imageSrc: castelo,
+    },
+    {
+        title: 'Signs of Lazyness',
+        synopsis: 'Praesent et sapien aliquet metus suscipit commodo eu in urna.',
+        genre: 'Documentary',
+        year: 2012,
+        duration: 33,
+        imageSrc: gatopordosol,
+    },
+    {
+        title: 'Exercise and Health',
+        synopsis: 'Sed lobortis vulputate tortor a feugiat. Quisque augue urna, accumsan.',
+        genre: 'Documentary',
+        year: 2017,
+        duration: 40,
+        imageSrc: surfando,
     },
 ]
 
