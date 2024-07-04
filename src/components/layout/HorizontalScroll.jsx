@@ -1,4 +1,3 @@
-import reactDom from 'react-dom'
 import React, { useEffect, useRef, useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -70,7 +69,7 @@ const HorizontalScroll = ({ items = initialItems, children }) => {
     const rightIndicatorRef = useRef(null)
     const [showIndicators, setShowIndicators] = useState(false)
     const scrollLeft = () => {
-        const node = reactDom.findDOMNode(ref.current)
+        const node = ref.current
 
         node.scrollBy({
             left: -node.clientWidth,
@@ -78,7 +77,7 @@ const HorizontalScroll = ({ items = initialItems, children }) => {
         })
     }
     const scrollRight = () => {
-        const node = reactDom.findDOMNode(ref.current)
+        const node = ref.current
 
         node.scrollBy({
             left: node.clientWidth,
@@ -93,9 +92,9 @@ const HorizontalScroll = ({ items = initialItems, children }) => {
         const overRight = () => scrollRight()
         const displayIndicators = () => setShowIndicators(true)
 
-        const nodeLeft = reactDom.findDOMNode(leftIndicatorRef.current)
-        const nodeRight = reactDom.findDOMNode(rightIndicatorRef.current)
-        const node = reactDom.findDOMNode(ref.current)
+        const nodeLeft = leftIndicatorRef.current
+        const nodeRight = rightIndicatorRef.current
+        const node = ref.current
 
         if (node) {
             if (node.scrollWidth > window.innerWidth) {

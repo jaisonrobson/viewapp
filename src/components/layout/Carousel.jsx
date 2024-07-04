@@ -1,5 +1,4 @@
-import ReactDOM from 'react-dom'
-import React, { useEffect, useRef, useState, forwardRef } from 'react'
+import React, { useEffect, useState, forwardRef, createRef } from 'react'
 import styled from 'styled-components'
 import { isDesktop } from 'react-device-detect'
 
@@ -117,7 +116,7 @@ const Carousel = ({
     caption = () => null,
     payload = initialPayload,
 }) => {
-    const ref = useRef(null)
+    const ref = createRef(null)
     const [active, setActive] = useState(0)
     const next = () => setActive(active === (payload.length - 1) ? 0 : active + 1)
 
@@ -126,7 +125,7 @@ const Carousel = ({
             let rotationEvent = setInterval(next, interval)
             const over = () => clearInterval(rotationEvent)
             const leave = () => rotationEvent = setInterval(next, interval)
-            const node = ReactDOM.findDOMNode(ref.current)
+            const node = ref.current
 
             if (isDesktop) {
                 node.addEventListener("mouseover", over)

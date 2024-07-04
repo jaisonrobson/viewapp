@@ -1,4 +1,3 @@
-import reactDom from 'react-dom'
 import React, { useContext, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap'
@@ -34,24 +33,28 @@ const Dropdown = (props) => {
         const over = () => setIsOpen(true)
         const leave = () => setIsOpen(false)
 
-        const node = reactDom.findDOMNode(ref.current)
-
-        node.addEventListener("mouseover", over)
-        node.addEventListener("mouseleave", leave)
+        if (ref && ref.current) {
+            ref.current.addEventListener("mouseover", over)
+            ref.current.addEventListener("mouseleave", leave)
+        }
 
         return () => {
-            node.removeEventListener("mouseover", over)
-            node.removeEventListener("mouseleave", leave)
+            if (ref && ref.current) {
+                ref.current.removeEventListener("mouseover", over)
+                ref.current.removeEventListener("mouseleave", leave)
+            }
         }
-    })
+    }, [ref])
 
     return (
-        <UncontrolledDropdown
-            ref={ref}
-            isOpen={isOpen}
-            toggle={toggle}
-            {...props}
-        />
+        <div ref={ref}>
+            <UncontrolledDropdown
+                
+                isOpen={isOpen}
+                toggle={toggle}
+                {...props}
+            />
+        </div>
     )
 }
 
