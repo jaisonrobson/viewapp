@@ -26,3 +26,17 @@ export const withModalContext = (WrappedComponent) => {
 
     return WithModalContext
 }
+
+export const withModalContextConsumer = (WrappedComponent) => {
+    const WithModalContextConsumer = (props) => (
+        <ModalContext.Consumer>
+            {value => <WrappedComponent modal={value} {...props} />}            
+        </ModalContext.Consumer>
+    )
+
+    hoistNonReactStatic(WithModalContextConsumer, WrappedComponent)
+
+    WithModalContextConsumer.displayName = `WithModalContextConsumer(${getDisplayName(WrappedComponent)})`
+
+    return WithModalContextConsumer
+}

@@ -46,8 +46,8 @@ const StyledP = styled.p`
     color: #FFFFFFA9;
 `
 
-const Cover = ({ title, caption, image, width, height }) => (
-    <Wrapper>
+const Cover = ({ title, caption, image, width, height, onClick }) => (
+    <Wrapper onClick={onClick}>
         <GradientOverlay width={width} height={height} />
 
         <CaptionOverlay width={width} height={height}>

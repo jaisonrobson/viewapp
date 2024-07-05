@@ -9,6 +9,7 @@ const StyledNavbar = styled(({ backgroundColor, ...props }) => <ReactstrapNavbar
     padding-left: 20px;
     padding-right: 20px;
     background-color: ${({ backgroundColor }) => backgroundColor || "#00000020"};
+    z-index: 100;
 `
 
 const Navbar = ({ children, ...props }) => {
