@@ -1,7 +1,8 @@
 import './App.css'
 
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, forwardRef } from 'react'
 import { withReducerContext, ReducerContext } from 'contexts/withReducerContext'
+import { withModalContext } from 'contexts/withModalContext'
 
 import Top from '../top/Top'
 import Content from '../content/Content'
@@ -159,7 +160,7 @@ const user = {
     name: 'David'
 }
 
-const App = () => {
+const App = forwardRef((props, ref) => {
     const { dispatch, ...state } = useContext(ReducerContext)
 
     useEffect(() => {
@@ -168,12 +169,12 @@ const App = () => {
     }, [dispatch, state.movies, state.user])
 
     return (
-        <div className="app bg-primary">
+        <div ref={ref} {...props} className="app bg-primary">
             <Top />
 
             <Content />
         </div>
     )
-}
+})
 
-export default withReducerContext(App)
+export default withReducerContext(withModalContext(App))
