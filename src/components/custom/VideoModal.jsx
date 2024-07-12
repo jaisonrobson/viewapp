@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 import ModalCover from 'components/custom/ModalCover'
 
-//Fazer a passagem de parametros aqui para fechar e abrir a propriedade Display por codigo
+import Button from 'components/layout/Button'
+
 const BackgroundWrapper = styled(({ display, innerRef, ...props }) => <div ref={innerRef} {...props} />)`
     ${({ display }) => display ? `display: block;` : 'display: none;'}
     position: fixed; /* Stay in place */
     z-index: 999; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -21,11 +21,12 @@ const BackgroundWrapper = styled(({ display, innerRef, ...props }) => <div ref={
 const BackgroundReffered = forwardRef((props, ref) => (<BackgroundWrapper innerRef={ref} {...props} />))
 
 const ContentWrapper = styled.div`
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+    margin: 10vh auto;
+    padding: 20px;
+    //border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0,0,0,0.80); /* Black w/ opacity */
 `
 
 const Close = styled.span`
@@ -43,18 +44,26 @@ const Close = styled.span`
 `
 
 const VideoModal = ({ showModal, onClose }) => {
-    const modal = useRef(null)
+    const modalRef = useRef(null)
 
     const onClick = (event) => {
-        if (modal && modal.current && event.target == modal.current)
+        if (modalRef && modalRef.current && event.target === modalRef.current)
             onClose()
     }
 
     return (
-        <BackgroundReffered ref={modal} onClick={onClick} display={showModal}>
+        <BackgroundReffered ref={modalRef} onClick={onClick} display={showModal}>
             <ContentWrapper>
                 <Close onClick={onClose}>&times;</Close>
-                <p>Teste de texto na modal, bla bla bla bla.</p>
+                <video width="100%" height="85%" controls>
+                    <source src="/videos/wildlife.mp4" type="video/mp4" />
+                </video>
+                
+                <hr style={{color: "white"}}/>
+
+                <div style={{ margin: 'auto' }}>
+                    <Button>Watch</Button>
+                </div>
             </ContentWrapper>
         </BackgroundReffered>
     )

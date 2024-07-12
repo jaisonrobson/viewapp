@@ -1,12 +1,12 @@
 import React from 'react'
 
 import HorizontalScroll from 'components/layout/HorizontalScroll'
-import Cover from 'components/layout/Cover'
+import VideoModal from 'components/custom/VideoModal'
 
 const PostersDisplay = ({ payload }) => (
     <HorizontalScroll items={payload}>
         {({ imageSrc, genre, title }) =>
-            <Cover
+            <VideoModal
                 image={imageSrc}
                 title={title}
                 caption={genre}
